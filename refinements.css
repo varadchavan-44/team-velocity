@@ -1,0 +1,12 @@
+/* Shared navigation refinements */
+.mobile-partner{display:none}
+.social-links{display:flex;align-items:center;gap:18px;margin-top:25px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey)}
+.social-links span{color:var(--ink)}.social-links a{display:inline-flex;align-items:center;gap:7px;color:var(--red);font-weight:500}.social-links a:hover{text-decoration:underline}.social-icon{width:19px;height:19px;fill:currentColor}
+/* Partner: keep the label and copy on a deliberate two-column baseline. */
+.partner-intro{grid-template-columns:minmax(180px,.45fr) minmax(0,1.55fr);gap:22px 72px}.partner-intro .eyebrow{grid-row:auto}.partner-intro .lead{grid-column:2;margin:0}.partner-intro .small{grid-column:2;max-width:500px}
+/* Journey: image cards inherit each archive photo's visual proportion. */
+.tl-card--placeholder.has-source-photo{aspect-ratio:var(--archive-ratio);min-height:0}
+.journey-page .inner-hero{background-image:linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.2)),url('assets/journey-photos/team-2019-hero.png');background-size:cover;background-position:center}
+@media(max-width:760px){.links.open .mobile-partner{display:flex;color:#fff;padding-top:8px;margin-top:3px;border-top:1px solid rgba(255,255,255,.18)}.social-links{align-items:flex-start;flex-wrap:wrap;gap:11px 16px}.social-links span{width:100%}.partner-intro{grid-template-columns:1fr;gap:22px}.partner-intro .lead,.partner-intro .small{grid-column:auto}}
+/* Team council: compact cards with placeholder member profiles. */
+.team-card .member-socials,.council-advisory .member-socials{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}.team-card .member-socials{margin-top:auto}.member-socials a{display:inline-flex;color:inherit;text-decoration:none}.member-socials svg{width:18px;height:18px;fill:currentColor}.member-socials a:hover{color:var(--red)}.council-advisory .council-grid div{min-height:244px}.council-advisory .council-grid b{font:500 11px 'IBM Plex Sans',sans-serif;letter-spacing:0;text-transform:none}.council-advisory .council-grid span{font-size:clamp(30px,3.1vw,48px);line-height:.88}.council-advisory .member-socials{border-color:rgba(255,255,255,.25);margin-top:auto}.council-advisory .member-socials a:hover{color:var(--red)}.advisory-section{padding-top:0}
