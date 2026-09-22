@@ -18,15 +18,14 @@
         : '';
     return `<article class="team-card reveal">${photo}<h3 class="display">${escapeHtml(member.name)}</h3><p class="member-role">${escapeHtml(member.role)}</p>${socials}</article>`;
   }
-
-  function renderGrid(elId, members, showSocials) {
-    const el = document.getElementById(elId);
-    if (!el) return;
-    el.innerHTML = members.length
-      ? members.map((m) => cardHtml(m, showSocials)).join('')
-      : '<p class="team-empty mono">No members added yet.</p>';
-  }
-
+function renderGrid(elId, members, showSocials) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  el.innerHTML = members.length
+    ? members.map((m) => cardHtml(m, showSocials)).join('')
+    : '<p class="team-empty mono">No members added yet.</p>';
+  el.querySelectorAll('.reveal').forEach((card) => card.classList.add('visible'));
+}
   async function loadTeam() {
     try {
       const res = await fetch('/api/team');
