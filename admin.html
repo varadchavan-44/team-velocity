@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="admin.css">
+<title>Admin — Team Velocity</title>
+</head>
+<body>
+<div class="admin-page">
+
+  <section id="login-view" class="admin-shell">
+    <h1 class="display">Admin login</h1>
+    <form id="login-form" class="admin-form">
+      <label>Password<input type="password" id="login-password" required autocomplete="current-password"></label>
+      <button type="submit" class="button">Log in</button>
+      <p id="login-error" class="admin-error" hidden></p>
+    </form>
+  </section>
+
+  <section id="app-view" class="admin-shell" hidden>
+    <div class="admin-topbar">
+      <h1 class="display">Site admin</h1>
+      <button id="logout-btn" class="button ghost">Log out</button>
+    </div>
+
+    <nav class="admin-tabs mono">
+      <button class="admin-tab active" data-tab="team">Team roster</button>
+      <button class="admin-tab" data-tab="content">Homepage content</button>
+    </nav>
+
+    <!-- TEAM TAB -->
+    <div class="admin-panel" data-panel="team">
+      <div class="admin-block">
+        <h2>Add member</h2>
+        <form id="member-form" class="admin-form">
+          <input type="hidden" id="member-id">
+          <label>Name<input type="text" id="member-name" required></label>
+          <label>Role<input type="text" id="member-role" required></label>
+          <label>Category
+            <select id="member-category">
+              <option value="council">Current council</option>
+              <option value="advisory">Advisory</option>
+            </select>
+          </label>
+          <label>Instagram URL<input type="url" id="member-instagram" placeholder="https://instagram.com/..."></label>
+          <label>LinkedIn URL<input type="url" id="member-linkedin" placeholder="https://linkedin.com/in/..."></label>
+          <label>Sort order<input type="number" id="member-sort" value="0"></label>
+          <label>Photo
+            <input type="file" id="member-photo-file" accept="image/png,image/jpeg,image/webp,image/gif">
+            <input type="hidden" id="member-photo-url">
+          </label>
+          <div id="member-photo-preview" class="admin-photo-preview"></div>
+          <div class="admin-form-actions">
+            <button type="submit" class="button" id="member-submit-btn">Add member</button>
+            <button type="button" class="button ghost" id="member-cancel-btn" hidden>Cancel edit</button>
+          </div>
+          <p id="member-error" class="admin-error" hidden></p>
+        </form>
+      </div>
+
+      <div class="admin-block">
+        <h2>Current council</h2>
+        <div id="member-list-council" class="admin-member-list"></div>
+      </div>
+      <div class="admin-block">
+        <h2>Advisory</h2>
+        <div id="member-list-advisory" class="admin-member-list"></div>
+      </div>
+    </div>
+
+    <!-- CONTENT TAB -->
+    <div class="admin-panel" data-panel="content" hidden>
+      <div class="admin-block">
+        <h2>Hero section</h2>
+        <form class="admin-form content-form" data-key="hero">
+          <label>Eyebrow<input type="text" name="eyebrow"></label>
+          <label>Heading (HTML allowed, e.g. &lt;br&gt; &lt;em&gt;)<textarea name="heading_html" rows="2"></textarea></label>
+          <label>Subtext<textarea name="subtext" rows="2"></textarea></label>
+          <button type="submit" class="button">Save hero</button>
+          <p class="content-saved mono" hidden>Saved.</p>
+        </form>
+      </div>
+
+      <div class="admin-block">
+        <h2>"What's moving now" update</h2>
+        <form class="admin-form content-form" data-key="update">
+          <label>Status label<input type="text" name="status_label"></label>
+          <label>Date label<input type="text" name="date_label"></label>
+          <label>Heading (HTML allowed)<textarea name="heading_html" rows="2"></textarea></label>
+          <label>Body<textarea name="body" rows="3"></textarea></label>
+          <button type="submit" class="button">Save update</button>
+          <p class="content-saved mono" hidden>Saved.</p>
+        </form>
+      </div>
+
+      <div class="admin-block">
+        <h2>Partner tease</h2>
+        <form class="admin-form content-form" data-key="partner">
+          <label>Eyebrow<input type="text" name="eyebrow"></label>
+          <label>Heading<input type="text" name="heading"></label>
+          <label>Subtext<textarea name="subtext" rows="2"></textarea></label>
+          <button type="submit" class="button">Save partner tease</button>
+          <p class="content-saved mono" hidden>Saved.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
