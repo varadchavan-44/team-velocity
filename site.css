@@ -5,3 +5,6 @@
 .footer-social a + a{margin-left:18px}
 
 .footer-address{display:block;margin-top:10px;font-style:normal;opacity:.75}
+
+.sponsor-wordmark{font:900 26px/1 'Big Shoulders Display',Impact,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+@media(max-width:760px){.sponsor-wordmark{font-size:20px}}
