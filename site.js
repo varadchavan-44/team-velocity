@@ -41,15 +41,8 @@ document.querySelectorAll('.brand img').forEach(logo=>{
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px 20% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 if(document.title.startsWith('The Team')){
-  const main=document.querySelector('main');
-  const oldHero=document.querySelector('.inner-hero');
-  const cover=document.createElement('section');
-  cover.className='team-cover';
-  cover.innerHTML='<div class="team-cover-overlay"></div><div class="team-cover-copy"><div class="eyebrow mono">The people behind the build</div><h1 class="team-cover-title">Meet the<br><em>team.</em></h1><p>Team Velocity / VNIT Nagpur</p></div><span class="team-cover-scroll mono">Scroll to reveal ↓</span>';
-  main.insertBefore(cover,main.firstChild);
-  oldHero?.remove();
-  document.querySelector('.team-section')?.setAttribute('id','team');
-  window.addEventListener('scroll',()=>{const p=Math.min(window.scrollY/(window.innerHeight*.65),1);cover.style.opacity=String(1-p*.72);cover.style.transform=`scale(${1-p*.04})`},{passive:true});
+  const cover=document.querySelector('.team-cover');
+  if(cover) window.addEventListener('scroll',()=>{const p=Math.min(window.scrollY/(window.innerHeight*.65),1);cover.style.opacity=String(1-p*.72);cover.style.transform=`scale(${1-p*.04})`},{passive:true});
 }
 const councilYear=document.querySelector('#council-year');
 if(councilYear) councilYear.addEventListener('change',()=>document.querySelectorAll('[data-council]').forEach(panel=>panel.hidden=panel.dataset.council!==councilYear.value));
