@@ -10,3 +10,12 @@
   .tl-card--photo{grid-template-columns:1fr}
   .tl-info{padding:22px 20px 26px}
 }
+
+/* journey-update:start */
+.tl-desc{margin:14px 0 0;font-size:14px;line-height:1.55;color:#aaa9a2;max-width:46ch}
+.tl-num--word{font-size:clamp(34px,4vw,56px);line-height:.95}
+.journey-page .inner-hero{background-image:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),url('assets/journey-photos/team-hero.jpg');background-size:cover,cover;background-position:center,center 35%}
+@media(max-width:760px){
+  .journey-page .inner-hero{background-image:linear-gradient(180deg,rgba(0,0,0,.35) 0,rgba(0,0,0,.8) 100%),url('assets/journey-photos/team-hero.jpg');background-position:center,55% 30%}
+}
+/* journey-update:end */
