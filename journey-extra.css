@@ -48,3 +48,23 @@ body .page main > header.inner-hero .hero-tagline{margin-top:14px}
   body .page main > header.inner-hero .hero-word{font-size:clamp(46px,14vw,84px) !important}
 }
 /* journey-hero-text:end */
+
+/* journey-hero-below:start */
+body .page main > header.inner-hero{
+  display:flex !important;flex-direction:column !important;align-items:stretch !important;justify-content:flex-start !important;
+  min-height:0 !important;height:auto !important;padding:0 0 clamp(40px,5vw,64px) !important;
+  background:#0a0a0a !important;
+}
+body .page main > header.inner-hero:before{display:none !important}
+body .page main > header.inner-hero .jh-photo{
+  flex:none;width:100%;height:clamp(380px,68vh,760px);
+  background:linear-gradient(180deg,rgba(6,6,6,.6) 0,rgba(6,6,6,0) 18%),url('assets/journey-photos/team-hero.jpg') center 20%/cover no-repeat #0a0a0a;
+}
+body .page main > header.inner-hero .shell{width:100%;padding-top:clamp(28px,3.5vw,48px)}
+body .page main > header.inner-hero .hero-word{font-size:clamp(44px,6vw,92px) !important;line-height:.92;margin:0}
+body .page main > header.inner-hero .hero-tagline{margin-top:14px}
+@media(max-width:760px){
+  body .page main > header.inner-hero .jh-photo{height:clamp(320px,82vw,460px);background-position:center,50% 20%}
+  body .page main > header.inner-hero .hero-word{font-size:clamp(40px,13vw,72px) !important}
+}
+/* journey-hero-below:end */
