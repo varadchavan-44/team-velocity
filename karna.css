@@ -1,0 +1,59 @@
+/* Karna: car page */
+:root{--karna-yellow:#ffc400}
+
+/* Hero: same hero, Karna photo behind it, no bottom fade */
+.karna-hero{min-height:clamp(560px,60vw,760px);background:#0a0a0a url('assets/karna-hero.png') 62% 58%/cover no-repeat}
+.karna-hero:before{background:
+  linear-gradient(180deg,rgba(10,10,10,.6) 0,transparent 24%),
+  linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.5) 45%,rgba(10,10,10,.12) 100%),
+  repeating-linear-gradient(115deg,transparent 0 47px,rgba(196,30,58,.14) 48px 49px),
+  radial-gradient(circle at 83% 11%,rgba(111,13,32,.5) 0,transparent 27%)}
+.karna-hero h1{font-size:clamp(84px,13vw,190px);line-height:.82;color:var(--karna-yellow)}
+
+/* Spec strip */
+.k-specs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:12px;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.k-spec{padding:clamp(22px,3vw,36px) 24px;border-right:1px solid rgba(255,255,255,.2)}
+.k-spec:first-child{border-left:1px solid rgba(255,255,255,.2)}
+.k-spec b{display:block;font-size:clamp(34px,4.2vw,58px);line-height:.9;color:#fff}
+.k-spec span{display:block;margin-top:12px;color:#aaa9a2}
+
+/* Build: photo + numbered points */
+.k-build{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);margin-top:clamp(56px,7vw,96px);align-items:start}
+.k-fig{margin:0;position:sticky;top:100px}
+.k-fig img{display:block;width:100%;aspect-ratio:9/13;object-fit:cover;border:1px solid rgba(255,255,255,.22);background:#141414}
+.k-fig figcaption{margin-top:12px;color:#b7b7b0}
+.k-head{margin-bottom:28px}
+.k-head h2{font-size:clamp(44px,5.5vw,76px);line-height:.88;margin:15px 0 0}
+.k-point{display:grid;grid-template-columns:56px 1fr;padding:26px 0;border-top:1px solid rgba(255,255,255,.2)}
+.k-point:last-child{border-bottom:1px solid rgba(255,255,255,.2)}
+.k-point>span{color:#c41e3a;padding-top:6px}
+.k-point h3{font-size:clamp(26px,2.6vw,34px);line-height:.95;margin:0 0 10px;color:#fff}
+.k-point p{font-size:15px;color:#aaa9a2;margin:0;max-width:520px}
+
+/* Workshop band */
+.k-band{margin:clamp(56px,7vw,96px) 0 0}
+.k-band img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 40%;border:1px solid rgba(255,255,255,.22)}
+.k-band figcaption{margin-top:12px;color:#b7b7b0}
+
+/* Uses */
+.k-uses-head{margin-top:clamp(56px,7vw,96px)}
+.k-uses{grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.2)}
+.k-uses .car-detail{border-bottom:1px solid rgba(255,255,255,.2)}
+.k-uses .car-detail h3{margin-top:30px}
+
+@media(max-width:1000px){
+  .k-uses{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .karna-hero{min-height:560px;background-position:70% 50%}
+  .karna-hero h1{font-size:clamp(72px,22vw,120px)}
+  .k-specs{grid-template-columns:repeat(2,1fr)}
+  .k-spec{border-bottom:1px solid rgba(255,255,255,.2)}
+  .k-spec:nth-child(odd){border-left:1px solid rgba(255,255,255,.2)}
+  .k-spec:nth-last-child(-n+2){border-bottom:0}
+  .k-build{grid-template-columns:1fr}
+  .k-fig{position:static}
+  .k-fig img{aspect-ratio:4/5}
+  .k-uses{grid-template-columns:1fr}
+  .k-band img{aspect-ratio:4/3}
+}
