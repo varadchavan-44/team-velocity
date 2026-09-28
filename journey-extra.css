@@ -1,0 +1,12 @@
+/* Journey: photo entries at true aspect ratio */
+.tl-card--photo{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);background:#0a0a0a;border:1px solid var(--line)}
+.tl-photo{margin:0;background:#141414;display:flex;flex-direction:column}
+.tl-photo img{display:block;width:100%;height:auto}
+.tl-photo figcaption{padding:10px 14px;background:#0a0a0a;color:#b7b7b0;border-top:1px solid rgba(255,255,255,.14)}
+.tl-info{padding:clamp(22px,3vw,44px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px}
+.tl-card--photo .tl-year,.tl-card--photo .tl-event{color:#c8c8c0;opacity:1}
+.tl-card--photo .tl-stat{color:#fff;border-color:rgba(255,255,255,.55);background:transparent}
+@media(max-width:760px){
+  .tl-card--photo{grid-template-columns:1fr}
+  .tl-info{padding:22px 20px 26px}
+}
