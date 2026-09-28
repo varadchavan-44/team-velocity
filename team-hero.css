@@ -1,0 +1,9 @@
+/* Team hero: original serif italic, title at top, only "the" in red */
+.team-cover-overlay{background:linear-gradient(180deg,rgba(0,0,0,.55) 0,rgba(0,0,0,.24) 22%,rgba(0,0,0,0) 46%,rgba(0,0,0,.2) 100%)}
+.team-cover-copy{position:absolute;top:clamp(128px,18vh,184px);left:48%;right:clamp(20px,5vw,64px);max-width:none;z-index:1}
+.team-cover .team-cover-title{font-family:'Fraunces',serif;font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;font-size:clamp(40px,5.6vw,80px);line-height:.98;margin:0;color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+.team-cover .team-cover-title .hl{color:#c41e3a}
+@media(max-width:760px){
+  .team-cover-copy{left:20px;right:20px;top:112px}
+  .team-cover .team-cover-title{font-size:clamp(36px,9vw,52px)}
+}
