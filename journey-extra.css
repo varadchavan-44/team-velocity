@@ -19,3 +19,10 @@
   .journey-page .inner-hero{background-image:linear-gradient(180deg,rgba(0,0,0,.35) 0,rgba(0,0,0,.8) 100%),url('assets/journey-photos/team-hero.jpg');background-position:center,55% 30%}
 }
 /* journey-update:end */
+
+/* journey-hero-fix:start */
+body .page main > header.inner-hero{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),url('assets/journey-photos/team-hero.jpg') center 35%/cover no-repeat #0a0a0a !important}
+@media(max-width:760px){
+  body .page main > header.inner-hero{background:linear-gradient(180deg,rgba(0,0,0,.35) 0,rgba(0,0,0,.8) 100%),url('assets/journey-photos/team-hero.jpg') 55% 30%/cover no-repeat #0a0a0a !important}
+}
+/* journey-hero-fix:end */
