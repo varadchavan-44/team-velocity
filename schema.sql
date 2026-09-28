@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS team_members (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   role TEXT NOT NULL,
-  category TEXT NOT NULL DEFAULT 'council' CHECK (category IN ('council', 'advisory')),
+  category TEXT NOT NULL DEFAULT 'council' CHECK (category IN ('council', 'advisory', 'team')),
   photo_url TEXT,
   instagram_url TEXT,
   linkedin_url TEXT,

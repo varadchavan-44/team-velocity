@@ -183,8 +183,10 @@
 
     const councilEl = document.getElementById('member-list-council');
     const advisoryEl = document.getElementById('member-list-advisory');
+    const teamEl = document.getElementById('member-list-team');
     councilEl.innerHTML = '';
     advisoryEl.innerHTML = '';
+    teamEl.innerHTML = '';
 
     members
       .filter((m) => m.category === 'council')
@@ -192,6 +194,9 @@
     members
       .filter((m) => m.category === 'advisory')
       .forEach((m) => advisoryEl.appendChild(renderMemberRow(m)));
+    members
+      .filter((m) => m.category === 'team')
+      .forEach((m) => teamEl.appendChild(renderMemberRow(m)));
   }
 
   // ---------- homepage content ----------

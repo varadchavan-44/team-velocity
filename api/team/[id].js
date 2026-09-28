@@ -15,8 +15,8 @@ module.exports = async (req, res) => {
 
   if (req.method === 'PUT') {
     const { name, role, category, photo_url, instagram_url, linkedin_url, sort_order } = req.body || {};
-    if (category && !['council', 'advisory'].includes(category)) {
-      return res.status(400).json({ error: "category must be 'council' or 'advisory'" });
+    if (category && !['council', 'advisory', 'team'].includes(category)) {
+      return res.status(400).json({ error: "category must be 'council', 'advisory' or 'team'" });
     }
 
     const result = await sql`

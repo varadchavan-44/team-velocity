@@ -33,6 +33,7 @@ function renderGrid(elId, members, showSocials) {
       const members = await res.json();
       renderGrid('team-grid-council', members.filter((m) => m.category === 'council'), true);
       renderGrid('team-grid-advisory', members.filter((m) => m.category === 'advisory'), false);
+      renderGrid('team-grid-members', members.filter((m) => m.category === 'team'), true);
     } catch (err) {
       console.error(err);
     }
