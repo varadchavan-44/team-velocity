@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://team-velocity-vnit.vercel.app/sitemap.xml
